@@ -1,8 +1,17 @@
 # PayGuard – Enterprise FinTech Test Automation Framework (UI + API + SQL)
 
-[![PayGuard Enterprise CI](https://img.shields.io/badge/PayGuard_Enterprise_CI-passing-brightgreen)](https://github.com/Neelamky2004/payguard-fintech-automation-engine/actions)
-![Tests](https://img.shields.io/badge/Tests-14%2F14_Passed-success)
-![Java](https://img.shields.io/badge/Java-17-blue)
+<p>
+  <img src="https://img.shields.io/badge/PayGuard_Enterprise_CI-passing-brightgreen" alt="CI"/>
+  <img src="https://img.shields.io/badge/Tests-14%2F14_Passed-success" alt="Tests"/>
+  <img src="https://img.shields.io/badge/Java-17-blue" alt="Java"/>
+  <img src="https://img.shields.io/badge/Selenium-4.18.1-green" alt="Selenium"/>
+  <img src="https://img.shields.io/badge/REST_Assured-5.4.0-orange" alt="REST"/>
+  <img src="https://img.shields.io/badge/Architecture-3--Tier_FinTech-purple" alt="Arch"/>
+</p>
+
+A production-ready hybrid automation framework architected in Java 17 delivering synchronized end-to-end verification across Presentation (UI), FinTech Service (REST API), and Persistence (JDBC Ledger) tiers.
+
+---
 
 ## Live Test Execution Matrix (14/14 Scenarios Passing)
 
@@ -22,3 +31,18 @@
 | **TC-12** | BDD | PaymentSteps.runScenario (FED_WIRE) | Multi-currency bulk clearance via FED_WIRE rail | PASS |
 | **TC-13** | BDD | PaymentSteps.runScenario (SEPA) | Multi-currency bulk clearance via SEPA instant rail | PASS |
 | **TC-14** | BDD | PaymentSteps.runScenario (RBI_RTGS) | Multi-currency bulk clearance via RBI RTGS rail | PASS |
+
+---
+
+## Quick Execution Instructions
+
+`ash
+# Run full enterprise regression suite
+mvn clean test
+
+# Run smoke verification suite
+mvn test -Dgroups=smoke
+
+# Run sanity validation suite
+mvn test -Dgroups=sanity
+`
