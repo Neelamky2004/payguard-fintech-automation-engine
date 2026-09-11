@@ -18,7 +18,7 @@ A production-ready hybrid automation framework architected in Java 17 delivering
 | Scenario ID | Layer | Test Method | Target / Verification | Result |
 | :--- | :--- | :--- | :--- | :--- |
 | **TC-01** | UI | PayGuardUITest.testAuthenticationSecurityBoundary | Blank/Null credentials negative validation | PASS |
-| **TC-02** | UI | PayGuardUITest.testFinancialDashboardIntegrity | Multi-metric balance, ledger rows & merchant descriptors | PASS |
+| **TC-02** | UI | PayGuardUITest.testFinancialDbashboardIntegrity | Multi-metric balance, ledger rows & merchant descriptors | PASS |
 | **TC-03** | UI | PayGuardUITest.testLedgerSortingAndVolumeCalculations | Table sorting event & absolute turnover parsing | PASS |
 | **TC-04** | UI | PayGuardUITest.testMultiRailSettlementMatrix | DataProvider multi-currency bulk batch routing | PASS |
 | **TC-05** | API | PayGuardAPITest.testPaymentGatewayStatus | Gateway HTTP 200 response & SLA latency check | PASS |
@@ -36,7 +36,7 @@ A production-ready hybrid automation framework architected in Java 17 delivering
 
 ## Quick Execution Instructions
 
-`ash
+`bash
 # Run full enterprise regression suite
 mvn clean test
 
@@ -46,3 +46,4 @@ mvn test -Dgroups=smoke
 # Run sanity validation suite
 mvn test -Dgroups=sanity
 `
+
