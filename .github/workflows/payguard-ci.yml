@@ -21,5 +21,8 @@ jobs:
         distribution: 'temurin'
         cache: 'maven'
 
-    - name: Run Maven Regression with Surefire Suite
-      run: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+    - name: Set up Chrome
+      uses: browser-actions/setup-chrome@v1
+
+    - name: Run Maven Regression Suite
+      run: mvn clean test
