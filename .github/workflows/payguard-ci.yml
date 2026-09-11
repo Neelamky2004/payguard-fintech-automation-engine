@@ -8,7 +8,7 @@ on:
 
 jobs:
   fintech-regression:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
 
     steps:
     - name: Checkout Repository
@@ -21,8 +21,5 @@ jobs:
         distribution: 'temurin'
         cache: 'maven'
 
-    - name: Set up Chrome
-      uses: browser-actions/setup-chrome@v1
-
-    - name: Run Maven Regression Suite
-      run: mvn clean test
+    - name: Run Maven TestNG Suite
+      run: mvn test -Dsurefire.suiteXmlFiles=testng.xml
