@@ -1,0 +1,21 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="PayGuard-Enterprise-Pro-Suite" verbose="1">
+    <listeners>
+        <listener class-name="com.payguard.utils.PayGuardListener"/>
+    </listeners>
+    
+    <test name="Enterprise-Core-Regression">
+        <classes>
+            <class name="com.payguard.tests.PayGuardUITest"/>
+            <class name="com.payguard.tests.PayGuardAPITest"/>
+            <class name="com.payguard.tests.PayGuardDBTest"/>
+            <class name="com.payguard.tests.PayGuardEndToEndReconciliationTest"/>
+        </classes>
+    </test>
+
+    <test name="Enterprise-Cucumber-BDD-Ecosystem">
+        <classes>
+            <class name="com.payguard.runners.PayGuardBDDRunner"/>
+        </classes>
+    </test>
+</suite>
