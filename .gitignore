@@ -4,3 +4,8 @@ allure-results/
 *.iml
 .vscode/
 test-output/
+
+target/
+reports/
+extent-test-output/
+*.html
