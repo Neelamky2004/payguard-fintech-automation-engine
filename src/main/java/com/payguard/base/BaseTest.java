@@ -12,11 +12,16 @@ public class BaseTest {
     private static final ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
 
     public static WebDriver getDriver() {
+        if (driverPool.get() == null) {
+            initDriver();
+        }
         return driverPool.get();
     }
 
-    @BeforeMethod
-    public void setup() {
+    private static synchronized void initDriver() {
+        if (driverPool.get() != null) {
+            return;
+        }
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-gpu", "--no-sandbox", "--disable-dev-shm-usage", "--window-size=1920,1080");
         
@@ -32,11 +37,18 @@ public class BaseTest {
         driverPool.set(driver);
     }
 
-    @AfterMethod
+    @BeforeMethod(alwaysRun = true)
+    public void setup() {
+        initDriver();
+    }
+
+    @AfterMethod(alwaysRun = true)
     public void tearDown() {
         WebDriver driver = driverPool.get();
         if (driver != null) {
-            driver.quit();
+            try {
+                driver.quit();
+            } catch (Exception ignored) {}
             driverPool.remove();
         }
     }
