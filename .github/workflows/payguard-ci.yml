@@ -1,4 +1,4 @@
-name: PayGuard Enterprise CI/CD Test Pipeline
+﻿name: PayGuard Enterprise CI/CD Test Pipeline
 
 on:
   push:
@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout Source Code
+    - name: Checkout Repository
       uses: actions/checkout@v3
 
     - name: Set up JDK 17
@@ -19,13 +19,7 @@ jobs:
       with:
         java-version: '17'
         distribution: 'temurin'
+        cache: 'maven'
 
-    - name: Run Headless FinTech Test Suite
-      run: mvn clean test -Dheadless=true
-
-    - name: Upload PayGuard Executive HTML Report
-      uses: actions/upload-artifact@v3
-      if: always()
-      with:
-        name: PayGuard-Executive-Report
-        path: reports/
+    - name: Run Maven Regression Suite
+      run: mvn clean test
