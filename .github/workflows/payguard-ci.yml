@@ -1,4 +1,4 @@
-﻿name: PayGuard Enterprise CI/CD Test Pipeline
+name: PayGuard Enterprise CI/CD Test Pipeline
 
 on:
   push:
@@ -22,4 +22,4 @@ jobs:
         cache: 'maven'
 
     - name: Run Maven TestNG Suite
-      run: mvn test -Dsurefire.suiteXmlFiles=testng.xml
+      run: mvn clean test "-Dsurefire.suiteXmlFiles=testng.xml"
