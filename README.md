@@ -1,16 +1,11 @@
-﻿# PayGuard Enterprise Test Automation Framework
+﻿# PayGuard Enterprise FinTech Automation Engine
 
-An enterprise-grade, 3-tier test automation framework built for high-reliability payment gateway and ledger validation.
+!! Build Status | Java 17 | Selenium 4 (POM) | REST Assured | JDBC Ledger | TestNG | Cucumber BDD | GitHub Actions
 
-## Tech Stack
-- Java 17
-- Apache Maven
-- Selenium WebDriver (POM)
-- REST Assured
-- JDBC Ledger Validation
-- TestNG & GitHub Actions CI
+An enterprise-grade 3-Tier automation engine for payment gateways, multi-currency rails (FED_WIRE, SEPA, RTGS), and SQL ledger reconciliation.
 
-## Run Tests
-`ash
-mvn clean test
-``
+## Execution
+- Full Suite: `mvn clean test`
+- Smoke Suite: `mvn test -Dgroups=smoke`
+- Regression: `mvn test -Dgroups=regression`
+
