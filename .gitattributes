@@ -1,0 +1,4 @@
+﻿reports/** linguist-vendored
+allure-results/** linguist-vendored
+docs/** linguist-documentation
+payguard_service/** linguist-detectable=true
