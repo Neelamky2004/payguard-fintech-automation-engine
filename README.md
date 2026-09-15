@@ -1,30 +1,39 @@
-# PayGuard – Enterprise FinTech Test Automation Framework (UI + API + SQL)
+# PayGuard – Enterprise FinTech Automation & Backend Engine (Python + Java + SQL)
 
 <p>
-  <img src="https://img.shields.io/badge/PayGuard_Enterprise_CI-passing-brightgreen" alt="CI"/>
+  <img src="https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white" alt="Python"/>
+  <img src="https://img.shields.io/badge/FastAPI-REST_API-009688?logo=fastapi&logoColor=white" alt="FastAPI"/>
+  <img src="https://img.shields.io/badge/PyTest-Passing-brightgreen?logo=pytest&logoColor=white" alt="PyTest"/>
   <img src="https://img.shields.io/badge/Tests-14%2F14_Passed-success" alt="Tests"/>
   <img src="https://img.shields.io/badge/Java-17-blue" alt="Java"/>
   <img src="https://img.shields.io/badge/Selenium-4.18.1-green" alt="Selenium"/>
-  <img src="https://img.shields.io/badge/REST_Assured-5.4.0-orange" alt="REST"/>
-  <img src="https://img.shields.io/badge/Architecture-3--Tier_FinTech-purple" alt="Arch"/>
+  <img src="https://img.shields.io/badge/SQL-JDBC_&_ACID-purple" alt="SQL"/>
 </p>
 
-Execution Summary: 14 Executed, 14 Passed, 0 Failed, 0 Skipped (100% Pass Rate)
+An enterprise-grade FinTech automation framework and backend service designed to process high-throughput multi-currency transactions, execute statistical anomaly detection, and perform end-to-end API, UI, and database verification.
 
 ---
 
 ## Core Engineering Capabilities
 
-1. **Flaky Test Resilience:** Integrated RetryAnalyzer and IAnnotationTransformer for automated retries on network fluctuations.
-2. **React Dynamic DOM Sync:** Solved async state reconciliation delays in headless execution using explicit WebDriverWait and custom synthetic JavaScript event triggers.
-3. **Chromium Profile Hardening:** Handled native Chromium credential warnings via experimental ChromeOptions preferences.
-4. **Dual Database Architecture:** Implemented DatabaseManager with dual configurations for JDBC ledger persistence and ACID state verification.
-5. **Continuous Integration:** Headless regression workflows executed automatically on every GitHub push via GitHub Actions.
+1. **Python REST Backend & Service Layer:** Built high-performance asynchronous REST endpoints using **FastAPI** and **Pydantic** for real-time transaction ingestion and status monitoring.
+2. **Rule-Based Anomaly Detection:** Implemented OOP-driven evaluation engines in Python (`payguard_service`) to detect statistical outliers, threshold breaches, and invalid amounts prior to ledger execution.
+3. **Automated Unit Testing & SDLC:** Complete test harness using **PyTest** for validation logic alongside continuous regression workflows.
+4. **Dual Database & SQL Verification:** Implemented `DatabaseManager` with dual configurations for JDBC ledger persistence, transactional state assertions, and ACID compliance.
+5. **Dynamic DOM & API Synchronization:** Solved asynchronous state reconciliation delays in headless execution using explicit `WebDriverWait` and native synthetic JavaScript event triggers.
+6. **Flaky Test Resilience:** Integrated `RetryAnalyzer` and `IAnnotationTransformer` for automated retries against network fluctuation.
 
 ---
 
 ## Suite Execution Commands
 
-* Run complete test suite: `mvn clean test`
-* Run smoke verification suite: `mvn test -Dgroups=smoke`
-* Run sanity validation suite: `mvn test -Dgroups=sanity`
+### 1. Python Automation Engine & REST API
+```bash
+# Install dependencies
+pip install -r requirements.txt
+
+# Run automated unit tests (PyTest)
+pytest tests/
+
+# Start FastAPI backend service
+uvicorn payguard_service.main:app --reload
