@@ -9,3 +9,7 @@ target/
 reports/
 extent-test-output/
 *.html
+
+venv/
+**/__pycache__/
+*.pyc
