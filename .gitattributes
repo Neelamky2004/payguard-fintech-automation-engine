@@ -1,4 +1,8 @@
-﻿reports/** linguist-vendored
+﻿*.html linguist-vendored
+*.css linguist-vendored
+*.js linguist-vendored
+reports/** linguist-vendored
 allure-results/** linguist-vendored
 docs/** linguist-documentation
 payguard_service/** linguist-detectable=true
+src/** linguist-detectable=true
